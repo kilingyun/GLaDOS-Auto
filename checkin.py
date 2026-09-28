@@ -166,10 +166,10 @@ def validate_cookie(cookie: str) -> Tuple[bool, str]:
         return False, "Cookie 为空"
     cookie = cookie.strip()
     keys = {part.split("=", 1)[0].strip() for part in cookie.split(";") if part.strip()}
-    if "koa:sess" not in keys:
-        return False, "Cookie 缺少必要字段: koa:sess"
-    if "koa:sess.sig" not in keys:
-        return False, "Cookie 缺少必要字段: koa:sess.sig"
+    if "gld:sess" not in keys:
+        return False, "Cookie 缺少必要字段: gld:sess"
+    if "gld:sess.sig" not in keys:
+        return False, "Cookie 缺少必要字段: gld:sess.sig"
     return True, ""
 
 
